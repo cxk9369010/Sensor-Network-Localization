@@ -7,7 +7,7 @@ l = 8;
 outputdim = dim+l; %  d+l
 noOfSensors = 900;
 noOfAnchors = 100; 
-rd = 0.1;                 %  distance radius 
+rd = 0.08;                 %  distance radius 
 
 nf = 0.1;                  %  nosiy factors
 anchorType=2;              % 1--grid points 2---placed randomly 
