@@ -151,7 +151,7 @@ if (plotyes)
           fprintf(' \n');
           figure(103)
           plotpositions(P0,PP,Xopt,[],BoxScale); 
-          xlabel(['RMSD %R = ',sprintf('%4.2e',full(RMSD2))]);
+          xlabel(['RMSD = ',sprintf('%4.2e',full(RMSD2))]);
           title('After refinement'); 
       end
   end
