@@ -1,17 +1,17 @@
 clear  all;
 results=[];
-spse=2;
+spse=0;
 randSeed = 1; 
-dim = 3;
+dim = 2;
 l = 8;
 outputdim = dim+l; %  d+l
-noOfSensors = 3600;
-noOfAnchors = 400;
-%for rd = 0.1:0.05:0.3;                 %  distance radius 
-for rd=0.16:0.02:0.18;
-for nf = 0:0.1:0.3;                  %  nosiy factors
-anchorType=2; %% 1--grid points 2---placed randomly 
-SecondLocalization = 1;
+noOfSensors = 900;
+noOfAnchors = 100; 
+rd = 0.1;                 %  distance radius 
+
+nf = 0.1;                  %  nosiy factors
+anchorType=2;              % 1--grid points 2---placed randomly 
+SecondLocalization = 1;    % for noiseless problems
 fprintf('####  noOfSensors = %3d \n',noOfSensors);
 fprintf('####  noOfAnchors = %3d \n',noOfAnchors);
 fprintf('####  nf = %1.1e \n',nf);
@@ -149,17 +149,14 @@ if (plotyes)
           fprintf(' \n');
           fprintf('####  RMSD = %4.2e',full(RMSD2));
           fprintf(' \n');
-%          figure(103)
-%          plotpositions(P0,PP,Xopt,[],BoxScale); 
-%          xlabel(['RMSD %R = ',sprintf('%4.2e',full(RMSD2))]);
-%          title('After refinement'); 
+          figure(103)
+          plotpositions(P0,PP,Xopt,[],BoxScale); 
+          xlabel(['RMSD %R = ',sprintf('%4.2e',full(RMSD2))]);
+          title('After refinement'); 
       end
   end
  % plot(tvartemp,errr,'b*')
 
   result=[NumOfEdge eval(vpa(RMSD1,2)) eval(vpa(RMSD2,2)) toc(startingTime)];      
- results=[results;result];
  
-end
-end
         
